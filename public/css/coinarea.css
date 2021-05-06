@@ -1,0 +1,16 @@
+.scroller{
+    animation: 25s scroll alternate infinite;
+}
+
+.scroller:hover {
+    animation-play-state: paused;
+  }
+
+@keyframes scroll{
+    from{
+        transform: translateX(0);
+    }
+    to{
+        transform: translateX(-100%);
+    }
+}
