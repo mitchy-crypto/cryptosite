@@ -70,16 +70,22 @@ class Deposit extends Component
     public function storeDeposit()
     {
         $amount = session()->get('confirmdeposit')['amount'];
+
         $coin = session()->get('confirmdeposit')['coin'];
+
         Transaction::create([
             'user_id' => auth()->id(),
             'amount' => $amount,
             'currency' => Wallet::find($coin)->name,
             'currency_code' => Wallet::find($coin)->code,
+            'cryp_image' => Wallet::find($coin)->image,
             'type' => 'deposit',
         ]);
+
         Mail::to(auth()->user()->email)->send(new UserConfirmedDepositMail($amount, $coin));
+
         request()->session()->forget('confirmdeposit');
-        
+
+        return redirect('/transactions');
     }
 }

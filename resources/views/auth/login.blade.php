@@ -2,10 +2,10 @@
     <x-header/>
     <x-auth-card>
         <div class="pt-2">
-            <h4 class="text-2xl mb-3 font-bold">Are you an affiliate?</h4>
-            <h4 class="text-sm font-bold text-gray-500">Set up your affiliate account on<b class="text-purple-800">...</b> for free</h4>
+            <h4 class="text-xl mb-3 font-bold tracking-wider">Are you an affiliate?</h4>
+            <h4 class="text-xs font-bold text-gray-500 tracking-wider">Set up your affiliate account on<b class="text-purple-800">...</b> for free</h4>
             <div class="mt-5">
-                <a href="" class="bg-green-500 text-white rounded hover:bg-green-800 shadow-lg uppercase text-sm font-semibold py-2 px-4">sign up</a>
+                <a href="" class="bg-purple-500 text-white tracking-wider rounded hover:bg-purple-800 shadow-lg uppercase text-xs font-bold py-1 px-3">sign up</a>
             </div>
             <div class="grid grid-cols-2 gap-2 mt-8">
                 <div class="h-36 flex justify-center">
@@ -23,8 +23,8 @@
             <div class="h-12 mb-8 flex">
                 <div class="bg-gray-500 rounded-full w-12 h-12"></div>
             </div>
-            <h4 class="text-xl font-black mb-2">welcome back</h4>
-            <h4 class="mb-5 text-sm font-bold text-gray-500">please log in to your account</h4>
+            <h4 class="text-xl font-black mb-2 tracking-wider">welcome back</h4>
+            <h4 class="mb-5 text-sm font-bold text-gray-500 tracking-wider">please log in to your account</h4>
             <!-- Session Status -->
         <x-auth-session-status class="mb-4" :status="session('status')" />
 
@@ -54,17 +54,17 @@
             <!-- Remember Me -->
             <div class="block mt-4">
                 <label for="remember_me" class="inline-flex items-center">
-                    <input id="remember_me" type="checkbox" class="rounded border-gray-300 text-green-600 shadow-sm focus:border-green-300 focus:ring focus:ring-green-200 focus:ring-opacity-50" name="remember">
-                    <span class="ml-2 text-sm text-gray-600">{{ __('Remember me') }}</span>
+                    <input id="remember_me" type="checkbox" class="rounded border-gray-300 text-purple-600 shadow-sm focus:border-purple-300 focus:ring focus:ring-purple-200 focus:ring-opacity-50" name="remember">
+                    <span class="ml-2 text-sm text-gray-600 tracking-wider">{{ __('Remember me') }}</span>
                 </label>
             </div>
 
-            <x-button class="mt-4 bg-green-600 mb-4 block w-full ">
+            <x-button class="mt-4 bg-purple-500 mb-4 block w-full ">
                 {{ __('Log in') }}
             </x-button>
             <hr>
             @if (Route::has('password.request'))
-            <a class="flex justify-center mt-4 font-bold text-sm text-gray-600 hover:text-gray-900" href="{{ route('password.request') }}">
+            <a class="tracking-wider flex justify-center mt-4 font-bold text-sm text-gray-600 hover:text-gray-900" href="{{ route('password.request') }}">
                 {{ __('Forgot your password?') }}
             </a>
             @endif

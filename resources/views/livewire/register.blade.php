@@ -44,11 +44,11 @@
     <div class="flex items-center justify-end mt-4">
         <label for="terms" class="flex items-center">
             <input id="terms" type="checkbox" class="rounded form-checkbox" name="terms">
-            <span class="ml-2 text-xs text-gray-500">{{__('Lorem ipsum dolor sit, amet consecteteur ing elit.')}}</span>
+            <span class="ml-2 text-xs text-gray-500 tracking-wider">{{__('Lorem ipsum dolor sit, amet consecteteur ing elit.')}}</span>
         </label>
     </div>
 
-    <button type="submit" class="mt-4 cursor-pointer bg-green-500 block w-full text-center justify-center items-center px-4 py-2 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-green-700 active:bg-green-900 focus:outline-none focus:border-green-900 focus-rind ring-green-300 disabled:opacity-25 transition ease-in-out duration-150">
+    <button type="submit" class="tracking-wider mt-4 cursor-pointer bg-purple-500 block w-full text-center justify-center items-center px-4 py-2 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-purple-700 active:bg-purple-900 focus:outline-none focus:border-purple-900 focus-rind ring-purple-300 disabled:opacity-25 transition ease-in-out duration-150">
         {{__('Register')}}
     </button>
 </form>

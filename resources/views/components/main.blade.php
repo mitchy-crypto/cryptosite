@@ -1,30 +1,36 @@
 <div class="">
-    <div class="px-36 py-5 bg-gray-200 grid grid-cols-2 gap-6">
-        <div class="py-12 space-y-4 px-8">
-            <h4 class="text-3xl font-black leading-4">People raise money here!</h4>
+    <div class="px-36 py-5 bg-purple-500 grid grid-cols-2 gap-2 h-screen">
+        <div class="py-12 space-y-4 md:pl-8">
+            <h4 class="text-5xl font-black">People raise money here!</h4>
             <div class="font-black">
-                <p class="text-md font-black text-gray-600"><b class="text-green-400">15,000</b> clients trust us.</p>
-                <p class="text-md font-black text-gray-600"> We are already entrusted with <b class="text-green-400">$85,000,000</b></p>
+                <p class="text-xl font-black tracking-widest text-white"><b class="text-black">15,000</b> clients trust us.</p>
+                <p class="text-xl font-black tracking-widest text-white"> We are already entrusted with <b class="text-black">85,000,000 usd</b></p>
             </div>
+            <p class="text-white text-md font-medium tracking-widest">The best way to grow your crypto asset is here.
+                Effortless yet stable. That’s how your earnings should be.
+                
+                </p>
+            <br>
             <div class="mt-5">
-                <a href="" class="text-md font-black text-white rounded-sm visited:text-red-400 hover:text-green-400 active:green-600 px-2 py-1 bg-green-500">Get Started</a>
+                <a href="" class="text-lg px-4 font-black text-purple-500 rounded-sm visited:text-red-400 hover:text-green-400 active:text-purple-700 px-2 py-2 bg-white rounded">Get Started</a>
             </div>
         </div>
-        <div class="px-8">
-            <div class="bg-green-600 p-12"></div>
+        <div class="-mt-8">
+            <img src="{{asset('img/download1.png')}}" class="object-cover h-1/2" alt="">
         </div>
     </div>
     <div class="px-40 py-5">
+        <br>
         <h4 class="text-3xl font-bold text-center mt-5">Our Benefits</h4>
         <br>
-        <div class="grid grid-cols-4 gap-12">
+        <div class="grid grid-cols-4 gap-12 mt-5">
             <x-partials.benefits-card>
                 <x-slot name="logo"></x-slot>
                 <x-slot name="header">
                     Fully Automated
                 </x-slot>
                 <x-slot name="body">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio sint cupiditate, nihil minima saepe cum laudantium. Voluptatum ullam temporibus perferendis culpa, unde eum.
+                    Our system is fully automated and our trading bots are sufficient to keep your funds in accelerated growth. Our clients funds are secured with zero to minomal risks.
                 </x-slot>
             </x-partials.benefits-card>
             <x-partials.benefits-card>
@@ -33,7 +39,7 @@
                     High Security
                 </x-slot>
                 <x-slot name="body">
-                    We use only licenced products, hosted on the best dedicated servers with protection against DDos attacks. Our wallets are backed by Bitgo.
+                    We use only licenced products, hosted on the best dedicated servers with protection against DDos attacks. Our wallets are backed by Bitgo, with a good amount stored offline.
                 </x-slot>
             </x-partials.benefits-card>
             <x-partials.benefits-card>
@@ -42,46 +48,49 @@
                     Full Fleged Privacy
                 </x-slot>
                 <x-slot name="body">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio sint cupiditate, nihil minima saepe cum laudantium. Voluptatum ullam temporibus perferendis culpa, unde eum.
+                    Security of our users information and funds is our first priority. As a financial body, we are committed to the highest level of security attainable. The company does not request official documents.
                 </x-slot>
             </x-partials.benefits-card>
-            <x-partials.benefits-card>
+            <x-partials.benefits-card>63
                 <x-slot name="logo"></x-slot>
                 <x-slot name="header">
-                    Interst-Free Exchange
+                    Interest-Free Exchange
                 </x-slot>
                 <x-slot name="body">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio sint cupiditate, nihil minima saepe cum laudantium. Voluptatum ullam temporibus perferendis culpa, unde eum.
+                    Exchange your funds to the currency of your choice. The steps are hassle free, it takes about 10minutes to complete the entire process with
+                    our technical and customer service ready to assist.
                 </x-slot>
             </x-partials.benefits-card>
         </div>
         <br>
         <br>
+        <br>
+        <br>
     </div>
-    <div class="pl-40 bg-gray-300">
+    <div class="pl-40 bg-gray-200">
         <div class="grid grid-cols-2">
-            <div class="space-y-4 py-8">
-                <h1 class="text-base font-black">Affiliate Program Benefits</h1>
-                <h4 class="text-sm font-bold">Do you have an affiliate team? Show them this offer:</h4>
+            <div class="space-y-4 py-12">
+                <h1 class="text-lg font-black tracking-wider">Affiliate Program Benefits</h1>
+                <h4 class="text-md font-bold tracking-wider">Do you have an affiliate team? Show them this offer:</h4>
                 <div class="flex space-x-4">
                     <div class="w-1 h-1 p-1 rounded-full bg-green-600 self-center"></div>
-                    <p class="text-gray-800 text-xs font-bold">Up to 30% of the deposit of your entire structure!</p>
+                    <p class="text-gray-800 text-sm tracking-wider font-bold">Up to 30% of the deposit of your entire structure!</p>
                 </div>
                 <div class="flex space-x-4">
                     <div class="w-1 h-1 p-1 rounded-full bg-green-600 self-center"></div>
-                    <p class="text-gray-800 text-xs font-bold">Up to 30% of the deposit of a referral on the firdst level!</p>
+                    <p class="text-gray-800 text-sm tracking-wider font-bold">Up to 30% of the deposit of a referral on the firdst level!</p>
                 </div>
                 <div class="flex space-x-4">
                     <div class="w-1 h-1 p-1 rounded-full bg-green-600 self-center"></div>
-                    <p class="text-gray-800 text-xs font-bold">Make a deposit today and see returns on investment after 24hours!</p>
+                    <p class="text-gray-800 text-sm tracking-wider font-bold">Make a deposit today and see returns on investment after 24hours!</p>
                 </div>
                 <div class="flex space-x-4">
                     <div class="w-1 h-1 p-1 rounded-full bg-green-600 self-center"></div>
-                    <p class="text-gray-800 text-xs font-bold">Make a deposit today and see returns on investment after 24hours!</p>
+                    <p class="text-gray-800 text-sm tracking-wider font-bold">Make a deposit today and see returns on investment after 24hours!</p>
                 </div>
                 <div class="flex space-x-4">
                     <div class="w-1 h-1 p-1 rounded-full bg-green-600 self-center"></div>
-                    <p class="text-gray-800 text-xs font-bold">Make a deposit today and see returns on investment after 24hours!</p>
+                    <p class="text-gray-800 text-sm tracking-wider font-bold">Make a deposit today and see returns on investment after 24hours!</p>
                 </div>
             </div>
             <div class="bg-gray-100 py-5 pr-40"></div>

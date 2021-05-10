@@ -46,6 +46,9 @@
                 <div class="flex flex-end space-x-4">
                     <button class="self-center font-semibold text-xs rounded border border-red-500 text-red-500 hover:bg-red-500 hover:text-white py-1 px-3">Cancel and return </button>
                     <button wire:click="storeDeposit" class="self-center active:border-green-400 border focus:border-green-400 font-semibold text-xs rounded bg-green-400 text-white py-1 px-3">Confirm <i class="ml-2 fas fa-long-arrow-alt-right"></i></button>
+                    <div wire:loading class="self-center">
+                        <i class="text-green-500 fas fa-spinner fa-pulse"></i>
+                    </div>
                 </div>
             </div>
         </div>

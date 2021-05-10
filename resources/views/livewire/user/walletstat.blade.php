@@ -5,22 +5,22 @@
           <table class="min-w-full">
             <thead class="bg-gray-50">
               <tr>
-                <th scope="col" class="px-6 py-2 text-left text-xs font-bold text-gray-500 uppercase tracking-wider">
+                <th scope="col" class="px-6 py-2 text-left text-xs tracking-wider font-bold text-gray-500 uppercase tracking-wider">
                   <small>Crypto coin</small>
                 </th>
-                <th scope="col" class="px-6 py-2 text-left text-xs font-bold text-gray-500 uppercase tracking-wider">
+                <th scope="col" class="px-6 py-2 text-left text-xs tracking-wider font-bold text-gray-500 uppercase tracking-wider">
                   <small>Earned Total</small>
                 </th>
-                <th scope="col" class="px-6 py-2 text-left text-xs font-bold text-gray-500 uppercase tracking-wider">
+                <th scope="col" class="px-6 py-2 text-left text-xs tracking-wider font-bold text-gray-500 uppercase tracking-wider">
                   <small>pending withdral</small>
                 </th>
-                <th scope="col" class="px-6 py-2 text-left text-xs font-bold text-gray-500 uppercase tracking-wider">
+                <th scope="col" class="px-6 py-2 text-left text-xs tracking-wider font-bold text-gray-500 uppercase tracking-wider">
                   <small>Withdrawn total</small>
                 </th>
-                <th scope="col" class="px-6 py-2 text-left text-xs font-bold text-gray-500 uppercase tracking-wider">
+                <th scope="col" class="px-6 py-2 text-left text-xs tracking-wider font-bold text-gray-500 uppercase tracking-wider">
                     <small>last deposit</small>
                 </th>
-                <th scope="col" class="px-6 py-2 text-left text-xs font-bold text-gray-500 uppercase tracking-wider">
+                <th scope="col" class="px-6 py-2 text-left text-xs tracking-wider font-bold text-gray-500 uppercase tracking-wider">
                     <small>last Withdrawal</small>
                 </th>
                 
@@ -32,24 +32,24 @@
                 <td class="px-6 py-2 whitespace-nowrap">
                   <div class="flex space-x-4">
                       <img class="h-5 w-5 rounded-full" src="{{$response['logo_url']}}" alt="">
-                      <div class="text-sm self-center font-semibold text-gray-900">
-                        {{$response['name']}}
+                      <div class="text-sm self-center tracking-wider font-semibold text-gray-900">
+                        <small>{{$response['name']}}</small>
                       </div>                     
                   </div>
                 </td>
-                <td class="px-6 py-2 text-semibold whitespace-nowrap text-sm text-gray-500">
+                <td class="px-6 py-2 text-semibold tracking-wider whitespace-nowrap text-sm text-gray-500">
                     <small>1.234543 </small>
                 </td>
-                <td class="px-6 py-2 text-semibold whitespace-nowrap text-sm text-gray-500">
+                <td class="px-6 py-2 text-semibold tracking-wider whitespace-nowrap text-sm text-gray-500">
                  <small> 0</small>
                 </td>
-                <td class="px-6 py-2 text-semibold whitespace-nowrap text-sm text-gray-500">
+                <td class="px-6 py-2 text-semibold tracking-wider whitespace-nowrap text-sm text-gray-500">
                   <small>0.23654323</small>
                 </td>
-                <td class="px-6 py-2 text-semibold whitespace-nowrap text-sm text-gray-500">
+                <td class="px-6 py-2 text-semibold tracking-wider whitespace-nowrap text-sm text-gray-500">
                    <small> 0.1254323</small>
                   </td>
-                  <td class="px-6 py-2 text-semibold whitespace-nowrap text-sm text-gray-500">
+                  <td class="px-6 py-2 text-semibold tracking-wider whitespace-nowrap text-sm text-gray-500">
                     <small>0</small>
                   </td>       
               </tr>

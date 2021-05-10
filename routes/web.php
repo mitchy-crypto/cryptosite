@@ -18,6 +18,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+// Route::get('/how-to-invest', )
+
 
 Route::group(['middleware' => ['auth','verified']], function(){
     Route::get('/dashboard', function () {
@@ -29,6 +31,12 @@ Route::group(['middleware' => ['auth','verified']], function(){
     Route::get('/your-deposits', function () {
         return view('dashboard');
     })->name('your-deposits');
+    Route::get('/transactions', function () {
+        return view('dashboard');
+    })->name('transactions');
+    Route::get('/withdraw', function () {
+        return view('dashboard');
+    })->name('withdraw');
 });
 
 Route::get('/timeelapsed', function(){

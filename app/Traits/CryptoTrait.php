@@ -13,7 +13,7 @@ trait CryptoTrait
         return $response;
     }
 
-    public function getCryptoEquivalent($currency, $amount)
+    public function getCryptoEquivalent($currency = 'BTC', $amount = 0)
     {
         $events = array_filter($this->getCryptoData()->toArray(), function ($event) use ($currency) {
             return $event['currency'] === $currency;
@@ -31,5 +31,12 @@ trait CryptoTrait
     public function getMoneyAsStringAttribute()
     {
         return sprintf('$ %s, $this->money');
+    }
+
+    public function selectedCryptos($selected)
+    {
+        $this->getCryptoData()->filter(function ($value, $key) use($selected){
+            return in_array($value['currency'], $selected);
+        });
     }
 }

@@ -1,10 +1,10 @@
 <div>
     <x-modals.confirmation name="proceed-to-confirm-deposit">
         <x-slot name="title">
-            <h2 class="capitalize text-xs font-bold">Proceed to confirmation?</h2>
+            <h2 class="capitalize text-xs font-bold tracking-wider">Proceed to confirmation?</h2>
         </x-slot>
         <x-slot name="body">
-            <small class="text-xs">Click confirm to complete transaction.</small>
+            <small class="text-xs tracking-wider">Click confirm to complete transaction.</small>
         </x-slot>
     
         <x-slot name="footer">
@@ -14,11 +14,11 @@
     </x-modals.confirmation>
     <br>
     <div class="">
-        <small class="text-xs font-bold">Your active deposit:</small>
-        <h2 class="text-2xl font-black">0.00 usd</h2>
+        <small class="text-xs font-bold tracking-wider">Your active deposit:</small>
+        <h2 class="text-2xl font-black tracking-wider">0.00 usd</h2>
     </div>
     <div class="my-3">
-        <small class="font-bold text-xs text-gray-700" style="font-size: 0.75rem">Top-up Amount or make New Deposit:</small>
+        <small class="font-bold text-xs text-gray-700 tracking-wider" style="font-size: 0.75rem">Top-up Amount or make New Deposit:</small>
     </div>
     <div class="flex space-x-2">
         <div class="p-0.5 flex md:w-64 h-8 border bg-gray-100 border-gray-200 rounded">
@@ -44,12 +44,12 @@
             <div class="flex flex-col shadow p-2 space-y-3 bg-white {{$activeWallet === $response['currency'] ? 'border border-green-300 ring-2 ring-green-500' : ''}}}">
                 <div class="flex space-x-2">
                     <img src="{{$response['logo_url']}}" class="self-center object-contain h-6" alt="sth">
-                    <h2 class="text-xs font-black self-center">{{$response['name']}}</h2>
+                    <h2 class="text-xs font-black self-center tracking-wider">{{$response['name']}}</h2>
                 </div>
                 <div class="flex flex-col">
                     <h2 class="text-xs font-black">1 {{$response['currency']}}</h2>
-                    <p class="text-xs">{{number_format($response['price'], 3)}} usd</p>
-                    <p class="text-xs mt-2 font-semibold">Your deposit: 0 usd</p>
+                    <p class="text-xs tracking-wider">{{number_format($response['price'], 3)}} usd</p>
+                    <p class="text-xs mt-2 font-semibold tracking-wider">Your deposit: 0 usd</p>
                 </div>
             </div>
         @endforeach

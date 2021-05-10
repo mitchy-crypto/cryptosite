@@ -29,6 +29,6 @@ class UserConfirmedDepositMail extends Mailable
      */
     public function build()
     {
-        return $this->markdown('emails.userconfirmeddeposit')->with(['coin' => Wallet::where('id',$this->coin)->name, 'amount' => $this->amount, 'user' => auth()->user()->name]);
+        return $this->markdown('emails.userconfirmeddeposit')->with(['coin' => Wallet::find($this->coin)->name, 'amount' => $this->amount, 'user' => auth()->user()->name]);
     }
 }

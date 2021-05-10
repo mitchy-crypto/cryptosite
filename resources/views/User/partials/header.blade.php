@@ -1,7 +1,7 @@
 <div class="fixed px-8 pt-5 pb-3 w-10/12 bg-white">
         <div class="flex justify-between">
             <div class="flex">
-                <div class="text-sm font-semibold">COINAREA</div>
+                <a href="/" class="text-sm font-semibold">COINAREA</a>
                 <div class="ml-28 flex space-x-6">
                     <p class="text-sm font-bold flex"><small class="mr-1">BTC/USD</small> <small class="text-green-500 mr-1">9,920</small> <i class="text-green-500 self-center fas fa-caret-up"></i></p>
                     <p class="text-sm font-bold flex"><small class="mr-1">ETH/USD</small> <small class="text-green-500 mr-1">1,920</small> <i class="text-green-500 self-center fas fa-caret-up"></i></p>

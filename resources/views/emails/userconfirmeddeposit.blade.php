@@ -1,14 +1,15 @@
 @component('mail::message')
-# Make Deposit
+# Deposit Transaction
+<br>
 
 Dear {{$user}},
 
-Your request for investment has been received. Send {{$amount}} worth of {{$coin}} to the wallet address below, or scsan the QRcode below to make payment.
+Your request for investment has been received. Send {{$amount}}usd worth of {{$coin}} to the wallet address below, or scsan the QRcode below to make payment.
 
 @component('mail::button', ['url' => ''])
-Button Text
+Go Back
 @endcomponent
 
-Thanks,<br>
+Thanks for investing with us,<br>
 {{ config('app.name') }}
 @endcomponent
