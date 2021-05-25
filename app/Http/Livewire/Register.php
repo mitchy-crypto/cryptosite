@@ -5,7 +5,7 @@ namespace App\Http\Livewire;
 use App\Models\Role;
 use App\Models\User;
 use Livewire\Component;
-use App\Rules\IsValidPassword;
+use Illuminate\Validation\Rules\Password;
 use App\Rules\SpecificDomainsOnly;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
@@ -23,6 +23,20 @@ class Register extends Component
     public $password_confirmation = '';
 
     protected $guarded;
+    
+     public function rules()
+     {
+         return [
+            'name' => ['required','string','max:255'],
+            'email' => ['required','string','email','max:80','unique:users',new SpecificDomainsOnly],
+            'password' => ['required','confirmed', Password::min(8)->mixedCase()->letters()->numbers()->symbols()->uncompromised()]
+         ];
+     }
+
+    public function updated($propertyName)
+    {
+        $this->validateOnly($propertyName);
+    }
 
     public function render()
     {
@@ -31,11 +45,7 @@ class Register extends Component
 
     public function store()
     {
-        $this->validate([
-            'name' => ['required','string','max:255'],
-            'email' => ['required','string','email','max:80','unique:users',new SpecificDomainsOnly],
-            'password' => ['required','min:6','confirmed', new IsValidPassword]
-        ]);
+        $this->validate();
 
         Auth::login($user = User::Create([
             'name' => $this->name,

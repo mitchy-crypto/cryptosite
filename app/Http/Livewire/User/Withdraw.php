@@ -2,7 +2,6 @@
 
 namespace App\Http\Livewire\User;
 
-use App\Models\Wallet;
 use Livewire\Component;
 use App\Traits\CryptoTrait;
 use Illuminate\Http\Request;
@@ -11,7 +10,9 @@ class Withdraw extends Component
 {
     use CryptoTrait;
 
-    public $coin = "BTC";
+    // public $coin = "BTC";
+
+    public $selectedCoin = "BTC";
 
     public $activeWallet;
 
@@ -28,7 +29,7 @@ class Withdraw extends Component
 
         'walletAddress' => 'required|min:20',
 
-        'coin' => 'required'
+        'selectedCoin' => 'required'
     ];
 
     protected $messages = [
@@ -41,6 +42,11 @@ class Withdraw extends Component
         'walletAddress.min' => 'check that the wallet address is valid.',
     ];
 
+    public function refreshComponent()
+    {
+        return true;
+    }
+
     public function updated($propertyName)
     {
         $this->validateOnly($propertyName);
@@ -48,47 +54,59 @@ class Withdraw extends Component
 
     public function render()
     {
-        $this->coin = session()->get('confirmwithdrawal')['coin'] ?? 'BTC';
+        $sessionData = session()->get('confirmwithdrawal');
 
-        $this->amount = session()->get('confirmwithdrawal')['amount'] ?? 50;
+        // $this->coin = $sessionData['selectedCoin'] ?? $this->coin;
 
-        $this->cryptoequivalent = $this->getCryptoEquivalent($this->coin, $this->amount);
+        $this->amount = $sessionData['amount'] ?? $this->amount;
 
-        $this->selectedCrypto = $this->getCryptoData()->filter(function ($value, $key) {
+        $this->walletAddress = $sessionData['walletAddress'] ?? $this->walletAddress;
 
-            return ($value['id'] == $this->coin);
+        $this->cryptoequivalent = $this->getCryptoEquivalent($this->selectedCoin, $this->amount);
+
+        $this->selectedCrypto = $this->getCryptoData()->filter(function ($value, $key) use($sessionData){
+
+            return ($value['id'] == ($sessionData['selectedCoin'] ?? $this->selectedCoin));
 
         })->first();
 
-        $this->activeWallet = Wallet::where('code', $this->coin)->pluck('code')->first();
+        $this->activeWallet = is_null($this->selectedCrypto) ? '' : $this->selectedCrypto['id'];
+
+        $cryptos = $this->getCryptoData();
         
         return view('livewire.user.withdraw',[
 
-            'cryptos' => $this->getCryptoData(),
+            'cryptos' => $cryptos,
 
             'activeWallet' => $this->activeWallet,
 
-            'cryptoEquivalentOfDeposit' => number_format($this->cryptoequivalent, 5, '.', ''),
-
-            'amount' => $this->amount
+            'amount' => $this->amount,
 
             ]);
     }
 
     public function selectCrypto($crypto)
     {
-        $this->coin = $crypto;
+        $this->selectedCoin = $crypto;
 
         $this->selectedCrypto = $this->getCryptoData()->filter(function ($value, $key) {
-            return ($value['id'] == $this->coin);
+            return ($value['id'] == $this->selectedCoin);
         })->first();
     }
 
     public function confirmWithdrawal(Request $request)
     {
         $validatedData = $this->validate();
-
+    
         $request->session()->put('confirmwithdrawal', $validatedData);
+
+        return redirect('/withdraw');
+    }
+
+
+    public function cancelWithdrawal()
+    {
+        request()->session()->forget('confirmwithdrawal');
 
         return redirect('/withdraw');
     }

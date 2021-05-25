@@ -43,8 +43,8 @@
 
     <div class="flex items-center justify-end mt-4">
         <label for="terms" class="flex items-center">
-            <input id="terms" type="checkbox" class="rounded form-checkbox" name="terms">
-            <span class="ml-2 text-xs text-gray-500 tracking-wider">{{__('Lorem ipsum dolor sit, amet consecteteur ing elit.')}}</span>
+            <input id="terms" required type="checkbox" class="rounded form-checkbox" name="terms">
+            <span class="ml-2 text-xs text-gray-500 tracking-wider">{{__('Click to agree to our terms of use and privacy policy.')}}</span>
         </label>
     </div>
 

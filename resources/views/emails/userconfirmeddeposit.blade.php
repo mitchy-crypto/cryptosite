@@ -4,11 +4,9 @@
 
 Dear {{$user}},
 
-Your request for investment has been received. Send {{$amount}}usd worth of {{$coin}} to the wallet address below, or scsan the QRcode below to make payment.
+Your request for investment has been received. Send {{$amount}}usd worth of {{$coin}} to the wallet address below, or scan the QRcode below to make payment.<br>
 
-@component('mail::button', ['url' => ''])
-Go Back
-@endcomponent
+# {{$wallet}}
 
 Thanks for investing with us,<br>
 {{ config('app.name') }}

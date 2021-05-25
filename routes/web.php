@@ -1,7 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\Admin\PageController;
+use App\Http\Controllers\Admin\DashboardController;
+use App\Http\Controllers\InvestStatsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,10 +17,13 @@ use App\Http\Controllers\Admin\PageController;
 
 Route::get('/', function () {
     return view('welcome');
-});
+})->name('index');
 
-// Route::get('/how-to-invest', )
+Route::get('/about-us', function () {
+    return view('welcome');
+})->name('about-us');
 
+Route::resource('/how-to-invest', InvestStatsController::class);
 
 Route::group(['middleware' => ['auth','verified']], function(){
     Route::get('/dashboard', function () {
@@ -40,13 +44,20 @@ Route::group(['middleware' => ['auth','verified']], function(){
 });
 
 Route::get('/timeelapsed', function(){
-    return 'clear user most recent request';
+    request()->session()->forget('confirmdeposit');
+    return redirect('/make-deposit');
 });
 
 Route::group(['middleware' => 'auth'], function(){
     Route::group(['prefix'=>'admin','as' => 'admin.','middleware'=>'is_admin'], function(){
-        Route::resource('pages', PageController::class);
+        Route::resource('dashboard', DashboardController::class);
     });
+    Route::get('/admin/users', function () {
+        return view('dashboard');
+    })->name('users');
+    Route::get('/admin/userstransactions', function () {
+        return view('dashboard');
+    })->name('userstransactions');
 });
 
 require __DIR__.'/auth.php';

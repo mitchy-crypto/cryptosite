@@ -17,7 +17,10 @@ class CreateTransactionsTable extends Migration
             $table->id();
             $table->foreignId('user_id')->constrained()->onDelete('cascade');
             $table->integer('amount');
+            $table->integer('roi')->default(0);
+            $table->timestamp('roi_start')->nullable();
             $table->string('status')->default('1');
+            $table->string('currency_code');
             $table->string('type');
             $table->string('currency');
             $table->timestamps();

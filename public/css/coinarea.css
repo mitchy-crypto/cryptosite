@@ -14,3 +14,22 @@
         transform: translateX(-100%);
     }
 }
+
+.timeline-item::before{
+    position: absolute;
+    content: "";
+    height: 15px;
+    width: 15px;
+    background-color:rgb(167, 241, 205);
+    top: 28px;
+    z-index: -1;
+    transform: rotate(45deg);
+}
+
+.timeline-first .timeline-item::before{
+    right: -7px;
+}
+
+.timeline-second .timeline-item::before{
+    left: -7px;
+}

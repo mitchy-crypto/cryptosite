@@ -1,5 +1,5 @@
 @if (session('confirmwithdrawal'))
-    <x-user.confirm-withdrawal :activeWallet="$activeWallet" :cryptoequi="$cryptoequivalent" :withdrawalAmount="$amount"/>    
+    <x-user.confirm-withdrawal :walletAddress="$walletAddress" :selectedCrypto="$selectedCrypto" :activeWallet="$activeWallet" :cryptoequi="$cryptoequivalent" :withdrawalAmount="$amount"/>    
 @else
-    <x-user.transferdetails :selectedCrypto="$selectedCrypto" :coin="$coin" :cryptos="$cryptos" :activeWallet="$activeWallet"/>
+    <x-user.transferdetails :selectedCrypto="$selectedCrypto" :cryptos="$cryptos" :activeWallet="$activeWallet"/>
 @endif

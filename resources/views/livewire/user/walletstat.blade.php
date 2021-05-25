@@ -38,16 +38,16 @@
                   </div>
                 </td>
                 <td class="px-6 py-2 text-semibold tracking-wider whitespace-nowrap text-sm text-gray-500">
-                    <small>1.234543 </small>
+                    <small>0</small>
                 </td>
                 <td class="px-6 py-2 text-semibold tracking-wider whitespace-nowrap text-sm text-gray-500">
                  <small> 0</small>
                 </td>
                 <td class="px-6 py-2 text-semibold tracking-wider whitespace-nowrap text-sm text-gray-500">
-                  <small>0.23654323</small>
+                  <small>0</small>
                 </td>
                 <td class="px-6 py-2 text-semibold tracking-wider whitespace-nowrap text-sm text-gray-500">
-                   <small> 0.1254323</small>
+                   <small> 0</small>
                   </td>
                   <td class="px-6 py-2 text-semibold tracking-wider whitespace-nowrap text-sm text-gray-500">
                     <small>0</small>
